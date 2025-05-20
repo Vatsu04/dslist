@@ -1,6 +1,59 @@
 package com.devsuperior.dslist.entities;
 
+import java.util.Objects;
+
+import jakarta.persistence.ManyToOne;
+
 public class BelongingPK {
+	
+	@ManyToOne
 	private Game game;
 	private GameList list;
+	
+	public BelongingPK() {
+		
+	}
+
+	public BelongingPK(Game game, GameList list) {
+
+		this.game = game;
+		this.list = list;
+	}
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
+	public GameList getList() {
+		return list;
+	}
+
+	public void setList(GameList list) {
+		this.list = list;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(game, list);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BelongingPK other = (BelongingPK) obj;
+		return Objects.equals(game, other.game) && Objects.equals(list, other.list);
+	}
+	
+	
+	
+	
 }
