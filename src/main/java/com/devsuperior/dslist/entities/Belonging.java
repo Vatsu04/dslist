@@ -2,32 +2,33 @@ package com.devsuperior.dslist.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_belonging")
 public class Belonging {
+
+	@EmbeddedId
 	private BelongingPK id = new BelongingPK();
+
 	private Integer position;
-	
-	public Belonging() {
-		
-	}
 
-	public Belonging(Game game, GameList list, Integer position) {
-
+	public void setGame(Game game) {
 		id.setGame(game);
+	}
+
+	public Game getGame() {
+		return id.getGame();
+	}
+
+	public void setList(GameList list) {
 		id.setList(list);
-		this.position = position;
 	}
 
-	public BelongingPK getId() {
-		return id;
-	}
-
-	public void setId(BelongingPK id) {
-		this.id = id;
+	public GameList getList() {
+		return id.getList();
 	}
 
 	public Integer getPosition() {
@@ -54,5 +55,4 @@ public class Belonging {
 		Belonging other = (Belonging) obj;
 		return Objects.equals(id, other.id);
 	}
-	
 }

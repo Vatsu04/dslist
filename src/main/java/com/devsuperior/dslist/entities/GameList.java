@@ -1,19 +1,29 @@
+
 package com.devsuperior.dslist.entities;
 
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name = "tb_belonging")
+@Table(name = "tb_game_list")
 public class GameList {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	public GameList() {
-		
+	}
+
+	public GameList(Long id, String name) {
+		this.id = id;
+		this.name = name;
 	}
 
 	public Long getId() {
@@ -29,12 +39,6 @@ public class GameList {
 	}
 
 	public void setName(String name) {
-		this.name = name;
-	}
-
-	public GameList(Long id, String name) {
-		super();
-		this.id = id;
 		this.name = name;
 	}
 
