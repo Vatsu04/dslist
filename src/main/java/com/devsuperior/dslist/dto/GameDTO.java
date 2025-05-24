@@ -9,14 +9,14 @@ public class GameDTO {
 	private Long id;
 	private String title;
 	private Integer year;
+	private String genre;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
 	private String shortDescription;
-	private String genre;
-	private Double score;
 	private String longDescription;
 	
 	public GameDTO() {
-		
 	}
 	
 	public GameDTO(Game entity) {
@@ -47,6 +47,30 @@ public class GameDTO {
 		this.year = year;
 	}
 
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getPlatforms() {
+		return platforms;
+	}
+
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+
 	public String getImgUrl() {
 		return imgUrl;
 	}
@@ -61,22 +85,6 @@ public class GameDTO {
 
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public Double getScore() {
-		return score;
-	}
-
-	public void setScore(Double score) {
-		this.score = score;
 	}
 
 	public String getLongDescription() {

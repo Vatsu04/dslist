@@ -1,4 +1,3 @@
-
 package com.devsuperior.dslist.entities;
 
 import java.util.Objects;
